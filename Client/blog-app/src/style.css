@@ -1,0 +1,865 @@
+* {
+  box-sizing: border-box;
+  color: inherit;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background: linear-gradient(50deg, var(--light-green-2), var(--indigo-dye));
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.app .container {
+  width: 100vw;
+}
+
+.app .container .links {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --mindaro: #d9ed92ff;
+  --light-green: #b5e48cff;
+  --light-green-2: #99d98cff;
+  --emerald: #76c893ff;
+  --keppel: #52b69aff;
+  --verdigris: #34a0a4ff;
+  --bondi-blue: #168aadff;
+  --cerulean: #1a759fff;
+  --lapis-lazuli: #1e6091ff;
+  --indigo-dye: #184e77ff;
+}
+
+.app .container .auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(45deg, var(--light-green), var(--indigo-dye));
+}
+
+.app .container .auth .auth-logo {
+  height: 130px;
+}
+
+.app .container .auth .auth-logo img {
+  width: 200px;
+}
+
+.app .container .auth h1 {
+  font-size: 45px;
+  color: var(--mindaro);
+  margin-bottom: 20px;
+}
+
+.app .container .auth form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px 50px 50px;
+  width: 350px;
+  gap: 20px;
+}
+
+.app .container .auth form input {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid var(--keppel);
+  border-radius: 10px;
+}
+
+/* .app .container .auth form button {
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--mindaro);
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid white;
+}
+
+.app .container .auth form button:hover {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  color: var(--indigo-dye);
+} */
+
+.app .container .auth form button {
+  padding: 0.5rem 1rem;
+  border: 2px solid currentColor;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: var(--mindaro);
+  background: transparent;
+  font-size: 2rem;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+  will-change: transform;
+  z-index: 0;
+}
+
+.app .container .auth form button::after {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.app .container .auth form button:hover::after {
+  transform: translate(0, 0);
+}
+
+.app .container .auth form button:hover {
+  border: 2px solid transparent;
+  color: var(--indigo-dye);
+  transform: scale(1.05);
+  will-change: transform;
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+}
+
+.app .container .auth form p {
+  font-size: 15px;
+  color: var(--cerulean);
+  text-align: center;
+}
+
+.app .container .auth form span {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--lapis-lazuli);
+}
+
+.app .container .auth form .auth-link:hover {
+  color: var(--mindaro);
+}
+
+.app .container .auth form .auth-error {
+  color: var(--mindaro);
+}
+
+.navbar .container {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .container .links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .container .links .link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.navbar .container .links .link:hover {
+  color: var(--mindaro);
+}
+
+.navbar .container .links .link {
+  position: relative;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .container .links .link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  border-radius: 4px;
+  background-color: var(--mindaro);
+  bottom: 40px;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar .container .links .link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.navbar .container .logo img {
+  width: 200px;
+}
+
+.navbar .container h6 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.navbar .container span {
+  /* font-size: 20px; */
+  cursor: pointer;
+}
+
+.navbar .container .navbar-span {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .container .navbar-span:hover {
+  color: var(--mindaro);
+}
+
+/* .navbar .write {
+  background: transparent;
+  color: var(--mindaro);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  border: 1px solid white;
+}
+
+.navbar .write:hover {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  color: var(--indigo-dye);
+  border: 1px solid var(--indigo-dye);
+} */
+
+.navbar .write {
+  padding: 0.5rem 0.5rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  color: var(--mindaro);
+  background: transparent;
+  font-size: 1.25rem;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+  will-change: transform;
+  z-index: 0;
+}
+
+.navbar .write::after {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.navbar .write:hover::after {
+  transform: translate(0, 0);
+}
+
+.navbar .write:hover {
+  border: 2px solid transparent;
+  color: var(--indigo-dye);
+  font-size: 1.25rem;
+  font-weight: 400;
+  transform: scale(1.05);
+  will-change: transform;
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.footer img {
+  height: 70px;
+}
+
+.home .posts {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  padding: 10px 30px;
+}
+
+.home .posts .post {
+  display: flex;
+  gap: 100px;
+}
+
+.home .posts .post:nth-child(2n + 1) {
+  flex-direction: row-reverse;
+}
+
+.home .posts .post .img {
+  flex: 2;
+  position: relative;
+  z-index: 1;
+}
+
+.home .posts .post .img::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--light-green), var(--indigo-dye));
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  z-index: -2;
+  border-radius: 5px;
+}
+
+.home .posts .post .img img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.home .posts .post .content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home .posts .content .home-userImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.home .posts .content span {
+  font-size: 11px;
+}
+
+.home .posts .post .content h1 {
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.home .posts .post .content p {
+  font-size: 18px;
+}
+
+/* .home .posts .post .content button {
+  width: max-content;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.home .posts .post .content button:hover {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  color: var(--indigo-dye);
+  border: 1px solid var(--indigo-dye);
+} */
+
+.home .posts .post .content button {
+  padding: 0.5rem 1rem;
+  border: 2px solid currentColor;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: var(--mindaro);
+  background: transparent;
+  font-size: 1.5rem;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+  will-change: transform;
+  z-index: 0;
+}
+
+.home .posts .post .content button::after {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-110%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.home .posts .post .content button:hover::after {
+  transform: translate(0, 0);
+}
+
+.home .posts .post .content button:hover {
+  border: 2px solid transparent;
+  color: var(--indigo-dye);
+  transform: scale(1.05);
+  will-change: transform;
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+}
+
+.single {
+  display: flex;
+  gap: 50px;
+  padding: 10px 30px;
+}
+
+.single .content {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.single .content img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+/* .single .content .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+} */
+
+.single .content .user {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  flex-direction: column;
+}
+
+.single .content .user .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.single .content .user .info .edit {
+  display: flex;
+  gap: 5px;
+  align-self: flex-start;
+}
+
+.single .content .user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.single .content .user span {
+  font-weight: bold;
+}
+
+.single .content .user p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  line-height: normal;
+}
+
+.single .content .edit {
+  display: flex;
+  gap: 5px;
+}
+
+.single .content .edit img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.single .content .edit img:hover {
+  width: 25px;
+  height: 25px;
+}
+
+.single .content h1 {
+  font-size: 42px;
+  color: #333;
+}
+
+.single .content p {
+  text-align: justify;
+  line-height: 30px;
+}
+
+.single .menu {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.single .menu h1 {
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+.single .menu .post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.single .menu img {
+  width: 100%;
+  height: 200%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* .single .menu button {
+  width: max-content;
+  padding: 10px 10px;
+  border: solid 1px white;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--mindaro);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
+}
+
+.single .menu button:hover {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  color: var(--lapis-lazuli);
+  border: solid 1px var(--lapis-lazuli);
+} */
+
+.single .menu button {
+  padding: 0.5rem 1rem;
+  border: 2px solid currentColor;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: var(--mindaro);
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+  will-change: transform;
+  z-index: 0;
+}
+
+.single .menu button::after {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.single .menu button:hover::after {
+  transform: translate(0, 0);
+}
+
+.single .menu button:hover {
+  border: 2px solid transparent;
+  color: var(--indigo-dye);
+  transform: scale(1.05);
+  will-change: transform;
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+}
+
+.add {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.add .content {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 70%;
+}
+
+.add .content input {
+  padding: 10px;
+  border: 1px solid lightgray;
+  background-color: beige;
+  border-radius: 5px;
+}
+
+.add .content .editorContainer {
+  height: 300px;
+  overflow: scroll;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.add .content .editorContainer .editor {
+  height: 100%;
+  border: none;
+  background-color: beige;
+}
+
+.add .menu {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.add .menu .item {
+  border: 1px solid lightgray;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.add .menu .item h1 {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.add .menu .item2 h1 {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.add .menu .item .file {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease, color 0.3s ease;
+}
+
+.add .menu .item .file:hover {
+  color: var(--mindaro);
+}
+
+.add .menu .item .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .add .menu .item .buttons :first-child {
+  cursor: pointer;
+  background: transparent;
+  color: var(--mindaro);
+  border: solid 1px white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 7px;
+  padding: 7px 7px;
+  border: 1px solid white;
+}
+
+.add .menu .item .buttons :first-child:hover {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  color: var(--lapis-lazuli);
+  border: 1px solid var(--lapis-lazuli);
+} */
+
+.add .menu .item .buttons :first-child {
+  padding: 0.5rem 0.5rem;
+  border: 2px solid currentColor;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: var(--mindaro);
+  background: transparent;
+  font-size: 0.8rem;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+  will-change: transform;
+  z-index: 0;
+}
+
+.add .menu .item .buttons :first-child::after {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.add .menu .item .buttons :first-child:hover::after {
+  transform: translate(0, 0);
+}
+
+.add .menu .item .buttons :first-child:hover {
+  border: 2px solid transparent;
+  color: var(--indigo-dye);
+  transform: scale(1.05);
+  will-change: transform;
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+}
+
+/* .add .menu .item .buttons :last-child {
+  cursor: pointer;
+  background: transparent;
+  color: var(--mindaro);
+  border: solid 1px white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 7px;
+  padding: 7px 7px;
+  border: 1px solid white;
+}
+
+.add .menu .item .buttons :last-child:hover {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  color: var(--lapis-lazuli);
+  border: 1px solid var(--lapis-lazuli);
+} */
+
+.add .menu .item .buttons :last-child {
+  padding: 0.5rem 0.5rem;
+  border: 2px solid currentColor;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: var(--mindaro);
+  background: transparent;
+  font-size: 0.8rem;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+  will-change: transform;
+  z-index: 0;
+}
+
+.add .menu .item .buttons :last-child::after {
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.add .menu .item .buttons :last-child:hover::after {
+  transform: translate(0, 0);
+}
+
+.add .menu .item .buttons :last-child:hover {
+  border: 2px solid transparent;
+  color: var(--indigo-dye);
+  transform: scale(1.05);
+  will-change: transform;
+  background: linear-gradient(50deg, var(--emerald), var(--mindaro));
+}
+
+.add .menu .item2 {
+  border: 1px solid lightgray;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.add .menu .item2 .cat {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add .menu .item2 .cat:hover {
+  color: var(--mindaro);
+}
